@@ -1,0 +1,20 @@
+﻿@model BehpardakhtMVC.Models.Basket
+@{
+    ViewBag.Title = "Basket";
+}
+@using (Html.BeginForm("ConnectToBank", "Basket", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+<h2>سبد خرید</h2>
+<div>
+    @Html.HiddenFor(model=>model.Id)
+    <span>مبلغ کل فاکتور:</span>
+    @Html.EditorFor(model=>model.Amount)
+    <span></span>
+</div>
+<div>
+    <input type="submit" title="اتصال به بانک" />
+</div>
+}
+
